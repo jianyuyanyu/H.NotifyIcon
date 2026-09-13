@@ -4,8 +4,6 @@ using Microsoft.UI.Xaml.Data;
 
 namespace H.NotifyIcon;
 
-[Event("SecondWindowContextMenuOpened",
-    Description = "Occurs when the second-window context menu is opened.")]
 public partial class TaskbarIcon
 {
 #if !HAS_MAUI

@@ -2,7 +2,6 @@
 global using System.ComponentModel;
 global using System.Diagnostics;
 global using DependencyPropertyGenerator;
-global using EventGenerator;
 global using H.NotifyIcon.Core;
 global using System.Runtime.Versioning;
 #if HAS_AVALONIA
