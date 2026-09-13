@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using EventGenerator;
 using H.NotifyIcon.Interop;
 
 namespace H.NotifyIcon.Core;
@@ -8,26 +7,6 @@ namespace H.NotifyIcon.Core;
 /// Receives messages from the taskbar icon through
 /// window messages of an underlying helper window.
 /// </summary>
-[Event<bool>("ChangeToolTipStateRequest",
-    Description = "The custom tooltip should be closed or hidden.",
-    PropertyNames = new[] { "IsVisible" })]
-[Event<MouseEvent, Point>("MouseEventReceived",
-    Description = "Fired in case the user clicked or moved within the taskbar icon area.",
-    PropertyNames = new[] { "MouseEvent", "Point" })]
-[Event<KeyboardEvent, Point>("KeyboardEventReceived",
-    Description = "Fired in case the user interacted with the taskbar icon area with keyboard shortcuts.",
-    PropertyNames = new[] { "KeyboardEvent", "Point" })]
-[Event<bool>("BalloonToolTipChanged",
-    Description = "Fired if a balloon ToolTip was either displayed or closed (indicated by the boolean flag).",
-    PropertyNames = new[] { "IsVisible" })]
-[Event("TaskbarCreated",
-    Description = "Fired if the taskbar was created or restarted. Requires the taskbar icon to be reset")]
-[Event("DpiChanged",
-    Description = "Fired if dpi change window message received.")]
-[Event("InitMenuPopup",
-    Description = "Sent when a drop-down menu or submenu is about to become active. " +
-                  "This allows an application to modify the menu before it is displayed, " +
-                  "without changing the entire menu.")]
 [SupportedOSPlatform("windows5.0")]
 public partial class MessageWindow : IDisposable
 {
